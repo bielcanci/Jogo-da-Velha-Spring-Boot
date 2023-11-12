@@ -6,9 +6,9 @@ Este é um simples jogo da velha implementado em Java usando o framework Spring 
 
 1. Certifique-se de ter o Java e o Maven instalados em seu sistema.
 2. Clone o repositório para o seu ambiente local.
-3. Navegue até o diretório do projeto no terminal.
-4. Execute o comando `mvn spring-boot:run` para iniciar o servidor.
-5. Abra o navegador e vá para `http://localhost:8080` para jogar o jogo da velha.
+3. Execute a classe main.
+4. Abra o index.html.
+5. Pronto, o seu navegador ira abrir o jogo da velha.
 
 ## Funcionalidades
 
