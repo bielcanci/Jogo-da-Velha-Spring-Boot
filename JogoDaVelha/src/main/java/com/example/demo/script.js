@@ -1,14 +1,25 @@
+// Variável que controla o jogador atual (inicia com 'X')
 let jogadorAtual = 'X';
 
+// Função chamada ao clicar em uma célula do tabuleiro
 function fazerJogada(linha, coluna) {
+    // Obtém a célula clicada
     const celula = document.getElementById(`celula-${linha}-${coluna}`);
+
+    // Verifica se a célula está vazia e o jogo não acabou
     if (celula.textContent === '' && jogadorAtual !== 'FIM') {
+        // Preenche a célula com o símbolo do jogador atual
         celula.textContent = jogadorAtual;
+
+        // Verifica se há um vencedor após a jogada
         verificarVitoria(linha, coluna);
+
+        // Alterna para o próximo jogador
         jogadorAtual = (jogadorAtual === 'X') ? 'O' : 'X';
     }
 }
 
+// Função para verificar se há um vencedor
 function verificarVitoria(linha, coluna) {
     const jogador = jogadorAtual;
     const tabuleiro = document.getElementById('tabuleiro');
@@ -47,10 +58,12 @@ function verificarVitoria(linha, coluna) {
         }
     }
 
+    // Se houver vitória, encerra o jogo e exibe uma mensagem
     if (vitoria) {
         jogadorAtual = 'FIM';
         alert(`O jogador ${jogador} venceu!`);
     } else {
+        // Se não houver vitória, verifica se o jogo empatou
         let empate = true;
         for (let i = 0; i < 9; i++) {
             if (celulas[i].textContent === '') {
@@ -58,6 +71,7 @@ function verificarVitoria(linha, coluna) {
                 break;
             }
         }
+        // Se houver empate, encerra o jogo e exibe uma mensagem
         if (empate) {
             jogadorAtual = 'FIM';
             alert('O jogo empatou!');
@@ -65,9 +79,10 @@ function verificarVitoria(linha, coluna) {
     }
 }
 
-
+// Função para reiniciar o jogo
 function reiniciarJogo() {
     jogadorAtual = 'X';
+    // Obtém todas as células do tabuleiro e as limpa
     const celulas = document.querySelectorAll('.celula');
     celulas.forEach(celula => {
         celula.textContent = '';
