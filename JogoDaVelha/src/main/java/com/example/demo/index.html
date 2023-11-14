@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Configuração da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
+    <!-- Inclusão de um arquivo de estilo externo chamado styles.css -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <body>
+    <!-- Corpo da página -->
     <div class="container">
+        <!-- Título do jogo -->
         <h1 class="title">Jogo da Velha</h1>
-    <div id="tabuleiro" class="tabuleiro">
-        <div class="linha">
-            <div class="celula" id="celula-0-0" onclick="fazerJogada(0, 0)"></div>
-            <div class="celula" id="celula-0-1" onclick="fazerJogada(0, 1)"></div>
-            <div class="celula" id="celula-0-2" onclick="fazerJogada(0, 2)"></div>
+        
+        <!-- Tabuleiro do jogo -->
+        <div id="tabuleiro" class="tabuleiro">
+            <!-- Linha 1 do tabuleiro -->
+            <div class="linha">
+                <div class="celula" id="celula-0-0" onclick="fazerJogada(0, 0)"></div>
+                <div class="celula" id="celula-0-1" onclick="fazerJogada(0, 1)"></div>
+                <div class="celula" id="celula-0-2" onclick="fazerJogada(0, 2)"></div>
+            </div>
+            
+            <!-- Linha 2 do tabuleiro -->
+            <div class="linha">
+                <div class="celula" id="celula-1-0" onclick="fazerJogada(1, 0)"></div>
+                <div class="celula" id="celula-1-1" onclick="fazerJogada(1, 1)"></div>
+                <div class="celula" id="celula-1-2" onclick="fazerJogada(1, 2)"></div>
+            </div>
+            
+            <!-- Linha 3 do tabuleiro -->
+            <div class="linha">
+                <div class="celula" id="celula-2-0" onclick="fazerJogada(2, 0)"></div>
+                <div class="celula" id="celula-2-1" onclick="fazerJogada(2, 1)"></div>
+                <div class="celula" id="celula-2-2" onclick="fazerJogada(2, 2)"></div>
+            </div>
         </div>
-        <div class="linha">
-            <div class="celula" id="celula-1-0" onclick="fazerJogada(1, 0)"></div>
-            <div class="celula" id="celula-1-1" onclick="fazerJogada(1, 1)"></div>
-            <div class="celula" id="celula-1-2" onclick="fazerJogada(1, 2)"></div>
-        </div>
-        <div class="linha">
-            <div class="celula" id="celula-2-0" onclick="fazerJogada(2, 0)"></div>
-            <div class="celula" id="celula-2-1" onclick="fazerJogada(2, 1)"></div>
-            <div class="celula" id="celula-2-2" onclick="fazerJogada(2, 2)"></div>
-        </div>
+        
+        <!-- Botão para reiniciar o jogo -->
+        <button class="btn-restart" onclick="reiniciarJogo()">Reiniciar Jogo</button>
     </div>
-  <button class="btn-restart" onclick="reiniciarJogo()">Reiniciar Jogo</button>
-<script src="script.js"></script>
+
+    <!-- Inclusão de um arquivo de script externo chamado script.js -->
+    <script src="script.js"></script>
 </body>
 </html>
