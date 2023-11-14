@@ -1,10 +1,13 @@
+// Pacote da aplicação
 package com.example.demo;
 
+// Classe que representa o tabuleiro do jogo da velha
 public class Tabuleiro {
+    // Matriz para armazenar o estado atual do tabuleiro
     private char[][] matriz = new char[3][3];
 
+    // Construtor que inicializa o tabuleiro com espaços vazios
     public Tabuleiro() {
-        // Inicializa o tabuleiro com espaços vazios
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 matriz[i][j] = ' ';
@@ -12,22 +15,28 @@ public class Tabuleiro {
         }
     }
 
+    // Método para obter a matriz do tabuleiro
     public char[][] getMatriz() {
         return matriz;
     }
 
+    // Método para realizar uma jogada no tabuleiro
     public void fazerJogada(int linha, int coluna, char jogador) {
+        // Verifica se a posição é válida
         if (linha < 0 || linha > 2 || coluna < 0 || coluna > 2) {
             throw new IllegalArgumentException("Posição inválida.");
         }
 
+        // Verifica se a posição está ocupada
         if (matriz[linha][coluna] != ' ') {
             throw new IllegalArgumentException("Posição já ocupada.");
         }
 
+        // Registra a jogada no tabuleiro
         matriz[linha][coluna] = jogador;
     }
 
+    // Método para verificar se um jogador venceu
     public boolean verificarVitoria(char jogador) {
         // Verifica linhas
         for (int i = 0; i < 3; i++) {
@@ -51,17 +60,21 @@ public class Tabuleiro {
             return true;
         }
 
+        // Se não houver vitória
         return false;
     }
 
+    // Método para verificar se o tabuleiro está completamente preenchido
     public boolean tabuleiroCheio() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
+                // Se houver uma posição vazia, o tabuleiro não está cheio
                 if (matriz[i][j] == ' ') {
                     return false;
                 }
             }
         }
+        // Se todas as posições estiverem ocupadas, o tabuleiro está cheio
         return true;
     }
 }
